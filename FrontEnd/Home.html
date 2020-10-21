@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <title>TesMKM</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+  <script src="style/jquery.min.js"></script>
+  <script src="style/bootstrap.min.js"></script>
+</head>
+    
+<body>
+
+  <style>
+  h1,h2,p,a{
+    font-family: sans-serif;
+    font-weight: normal;
+  }
+ 
+  .jam-digital {
+    overflow: hidden;
+    width: 340px;
+    margin: 20px auto;
+    border: 5px solid #efefef;
+  }
+  .kotak{
+    float: left;
+    width: 110px;
+    height: 100px;
+    background-color: #189fff;
+  }
+  .jam-digital p {
+    color: #fff;
+    font-size: 36px;
+    text-align: center;
+    margin-top: 30px;
+  }
+ 
+ 
+</style>
+
+<nav class="navbar navbar-inv navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Tes MKM</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class=""><a href="#myPage">Home</a></li>
+          <li><a href="#">Gallery</a></li>
+        <li><a href="#">Store</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>  
+    
+    
+    
+<form class="modal-content animate" action="../BackEnd/Logout.php" method="POST">
+<div class="jam-digital">
+  <div class="kotak">
+    <p id="jam"></p>
+  </div>
+  <div class="kotak">
+    <p id="menit"></p>
+  </div>
+  <div class="kotak">
+    <p id="detik"></p>
+  </div>
+</div>
+</form>
+
+ 
+
+    
+<script type="text/javascript" src="style/jquery.min.js"></script>
+<script type="text/javascript" src="style/bootstrap.min.js"></script>
+<script type="text/javascript" src="style/bootstrap.js"></script>
+    <script>
+        
+$(document).ready(function(){
+  $(window).scroll(function(){
+  	var scroll = $(window).scrollTop();
+	  if (scroll > 150) {
+	    $(".navbar").addClass('white');
+	  }
+
+	  else{
+		  $(".navbar").removeClass('white');  	
+	  }
+  })
+})
+    </script>
+    
+  <script>
+  window.setTimeout("waktu()", 1000);
+ 
+  function waktu() {
+    var waktu = new Date();
+    setTimeout("waktu()", 1000);
+    document.getElementById("jam").innerHTML = waktu.getHours();
+    document.getElementById("menit").innerHTML = waktu.getMinutes();
+    document.getElementById("detik").innerHTML = waktu.getSeconds();
+  }
+</script>
+</body>
+</html>
